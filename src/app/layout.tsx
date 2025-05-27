@@ -23,7 +23,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className="font-sans w-full">
+        <main className="font-sans w-full selection:bg-warning">
           <Navbar />
           <section className="w-full min-h-screen"> {children}</section>
           <Footer />

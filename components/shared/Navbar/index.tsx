@@ -7,7 +7,7 @@ import { IoClose, IoMenu } from "react-icons/io5";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <section className="w-full shadow-sm min-h-15 fixed top-0 z-50 bg-white/80 backdrop-blur-lg">
+    <section className="w-full shadow-sm min-h-15 fixed top-0 z-50 bg-white/20 backdrop-blur-lg">
       <nav className="container mx-auto px-5 h-full py-4 justify-between items-center flex flex-wrap">
         <div className=" text-warning">
           <Link href={"/"}>
@@ -24,14 +24,14 @@ export default function Navbar() {
           {isOpen ? (
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="btn btn-soft btn-sm"
+              className="btn btn-soft btn-warning btn-sm"
             >
               <IoClose size={24} />
             </button>
           ) : (
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="btn btn-soft btn-sm"
+              className="btn btn-soft btn-warning btn-sm"
             >
               <IoMenu size={24} />
             </button>
@@ -43,7 +43,7 @@ export default function Navbar() {
             isOpen ? "block" : "hidden"
           )}
         >
-          <ul className="flex flex-col md:flex-row font-semibold text-base-content/70 md:items-center text-sm gap-1">
+          <ul className="flex flex-col md:flex-row font-semibold md:items-center text-sm gap-1 text-white">
             <Link href={"/"}>
               <li className="w-full btn btn-active btn-sm text-left">
                 <span className="w-full">Home</span>

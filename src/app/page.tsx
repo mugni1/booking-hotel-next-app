@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import HeroSection from "../../components/layouts/HeroSection";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -6,8 +7,8 @@ export const metadata: Metadata = {
 };
 export default function Home() {
   return (
-    <section className="container mx-auto px-5 pt-20">
-      <h1>Asu</h1>
-    </section>
+    <>
+      <HeroSection />
+    </>
   );
 }

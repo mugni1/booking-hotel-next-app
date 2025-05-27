@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <section className="w-full bg-base-content text-white">
       <footer className="px-5 container mx-auto">
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 py-4 gap-8">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 py-4 gap-8 mb-5 ">
           <div className="columns-1">
             <div className=" my-5">
               <Link href={"/"}>
@@ -19,7 +19,7 @@ export default function Footer() {
                 />
               </Link>
             </div>
-            <p className="text-sm">
+            <p className="text-sm text-white/70">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet
               inventore perferendis quam est magnam totam deserunt, commodi, a
               impedit, et corrupti earum tempora odit aperiam maxime eaque
@@ -28,7 +28,7 @@ export default function Footer() {
           <div className="columns-1 grid grid-cols-2">
             <div className="flex flex-col gap-2">
               <h1 className="font-bold md:mb-3 ">Link</h1>
-              <ul className="text-sm flex flex-col gap-2">
+              <ul className="text-sm flex flex-col gap-2 text-white/70">
                 <Link href="/">
                   <li>Home</li>
                 </Link>
@@ -48,7 +48,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-col gap-2">
               <h1 className="font-bold md:mb-3 ">Legal</h1>
-              <ul className="text-sm flex flex-col gap-2">
+              <ul className="text-sm flex flex-col gap-2 text-white/70">
                 <Link href="/">
                   <li>Legal</li>
                 </Link>
@@ -66,7 +66,7 @@ export default function Footer() {
           </div>
           <div className="columns-1 flex flex-col gap-3">
             <h1 className="font-bold ">Newsletter</h1>
-            <p className="text-sm">
+            <p className="text-sm text-white/70">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat,
               sed.
             </p>

@@ -1,3 +1,5 @@
+"use client";
+import { signIn } from "next-auth/react";
 import Image from "next/image";
 import React from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa6";
@@ -20,7 +22,10 @@ export default function Login() {
             </h2>
           </div>
           <div className="justify-end card-actions">
-            <button className="btn btn-warning w-full flex items-center">
+            <button
+              onClick={() => signIn("google")}
+              className="btn btn-warning w-full flex items-center"
+            >
               <FaGoogle size={24} /> SignIn with Google
             </button>
             <button className="btn btn-warning w-full flex items-center">

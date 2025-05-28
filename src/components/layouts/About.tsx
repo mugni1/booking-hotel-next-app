@@ -26,7 +26,7 @@ export default function About() {
           </p>
         </div>
       </header>
-      <section className="w-full  flex justify-center">
+      <section className="w-full  flex justify-center pt-8">
         <div className=" container mx-auto px-5  flex flex-col md:flex-row gap-5 py-5">
           <Image
             src="/images/about-image.jpg"

@@ -28,7 +28,10 @@ export default function Login() {
             >
               <FaGoogle size={24} /> SignIn with Google
             </button>
-            <button className="btn btn-warning w-full flex items-center">
+            <button
+              onClick={() => signIn("github")}
+              className="btn btn-warning w-full flex items-center"
+            >
               <FaGithub size={24} /> SignIn with Github
             </button>
           </div>

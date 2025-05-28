@@ -49,7 +49,7 @@ export default function Navbar() {
                 <span className="w-full">Home</span>
               </li>
             </Link>
-            <Link href={"/"}>
+            <Link href={"/about"}>
               <li className="w-full btn btn-ghost btn-sm text-left">
                 <span className="w-full">About</span>
               </li>

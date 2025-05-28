@@ -1,4 +1,24 @@
-## Fitur Utama Aplikasi
+# BOOKING HOTEL
+
+Sebuah aplikasi web untuk melakukan pemesanan hotel secara online. Pengguna dapat mencari dan memesan hotel, melakukan pembayaran melalui payment gateway, serta login dengan akun Google atau GitHub. Admin juga memiliki dashboard untuk mengelola data hotel secara lengkap.
+
+## 📦 Instalasi
+
+```bash
+# Clone repo
+git clone https://github.com/mugni1/booking-hotel-next-app.git
+
+# Masuk ke folder
+cd booking-hotel-next-app
+
+# Install dependencies
+npm install
+
+# Jalankan app
+npm run dev
+```
+
+## 🚀 Fitur Utama
 
 - CRUD Hotel
 - Dashboard Admin
@@ -6,22 +26,13 @@
 - Login With Github
 - Terintegrasi Dengan Payment Gateaway
 
-## Getting Started
+## 🛠️ Teknologi
 
-Pertama, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Next.JS
+  - TypeScript
+  - React
+  - Zustand
+- Tailwind CSS
+  - DaisyUI
+- PostgreSQL
+- Auth.JS

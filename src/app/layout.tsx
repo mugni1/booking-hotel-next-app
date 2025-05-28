@@ -1,7 +1,7 @@
 import { Geist_Mono, Raleway } from "next/font/google";
 import "./globals.css";
-import Navbar from "../../components/shared/Navbar";
-import Footer from "../../components/shared/Footer";
+import Navbar from "../components/shared/Navbar";
+import Footer from "../components/shared/Footer";
 
 const geistSans = Raleway({
   variable: "--font-geist-sans",
@@ -23,7 +23,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className="font-sans w-full selection:bg-warning">
+        <main className="font-sans w-full selection:bg-warning/70">
           <Navbar />
           <section className="w-full min-h-screen"> {children}</section>
           <Footer />

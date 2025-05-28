@@ -17,13 +17,15 @@ export default function HeroSection() {
       </div>
       <div className="absolute flex items-center inset-0 text-white">
         <div className="container mx-auto px-5 flex flex-col items-center gap-5">
-          <h1 className="text-5xl md:text-6xl font-extrabold capitalize text-center">
+          <h1 className="text-4xl md:text-6xl font-extrabold capitalize text-center">
             Book your luxury room
           </h1>
-          <p className="font-bold">Get Special offer just for you today.</p>
+          <p className="font-bold text-xs md:text-base">
+            Get Special offer just for you today.
+          </p>
           <div className="flex gap-3 items-center font-bold ">
-            <button className="btn btn-warning text-white">Book Now</button>
-            <button className="btn btn-warning btn-outline text-white">
+            <button className="btn btn-warning text-white ">Book Now</button>
+            <button className="btn btn-warning btn-outline text-white ">
               Contact Us
             </button>
           </div>

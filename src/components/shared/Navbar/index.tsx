@@ -7,7 +7,7 @@ import { IoClose, IoMenu } from "react-icons/io5";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <section className="w-full shadow-sm min-h-15 fixed top-0 z-50 bg-white/20 backdrop-blur-lg">
+    <section className="w-full shadow-sm min-h-15 fixed top-0 z-50 bg-black/20 backdrop-blur-lg">
       <nav className="container mx-auto px-5 h-full py-4 justify-between items-center flex flex-wrap">
         <div className=" text-warning">
           <Link href={"/"}>

@@ -50,42 +50,42 @@ export default function Navbar() {
         {/* navbar center  */}
         <div
           className={clsx(
-            "w-full mt-4 md:w-fit md:mt-0  md:block navbar-center",
+            "w-full mt-4 md:w-fit md:mt-0 md:block navbar-center",
             isOpen ? "block" : "hidden"
           )}
         >
-          <ul className="flex flex-col md:flex-row font-semibold md:items-center text-sm gap-1 text-white">
+          <ul className="flex flex-col md:flex-row md:items-center text-sm gap-1 text-white">
             <Link href={"/"}>
-              <li className="w-full btn btn-active btn-sm text-left">
+              <li className="w-full btn btn-active btn-sm text-left font-bold">
                 <span className="w-full">Home</span>
               </li>
             </Link>
             <Link href={"/about"}>
-              <li className="w-full btn btn-ghost btn-sm text-left">
+              <li className="w-full btn btn-ghost btn-sm text-left font-bold">
                 <span className="w-full">About</span>
               </li>
             </Link>
             <Link href={"/"}>
-              <li className="w-full btn btn-ghost btn-sm text-left">
+              <li className="w-full btn btn-ghost btn-sm text-left font-bold">
                 <span className="w-full">Contact</span>
               </li>
             </Link>
             {data && (
               <>
                 <Link href={"/"}>
-                  <li className="w-full btn btn-ghost btn-sm text-left">
+                  <li className="w-full btn btn-ghost btn-sm text-left font-bold">
                     <span className="w-full">My Reservation</span>
                   </li>
                 </Link>
                 {data?.user.role == "admin" && (
                   <>
                     <Link href={"/"}>
-                      <li className="w-full btn btn-ghost btn-sm text-left">
+                      <li className="w-full btn btn-ghost btn-sm text-left font-bold">
                         <span className="w-full">Dashboard</span>
                       </li>
                     </Link>
                     <Link href={"/"}>
-                      <li className="w-full btn btn-ghost btn-sm text-left">
+                      <li className="w-full btn btn-ghost btn-sm text-left font-bold">
                         <span className="w-full">Manage Rooms</span>
                       </li>
                     </Link>
@@ -100,7 +100,7 @@ export default function Navbar() {
         {/* navbar end  */}
         <div
           className={clsx(
-            "navbar-end md:block md:w-2/12 w-full pt-2 md:border-none border-t border-black/40",
+            "navbar-end md:block md:w-2/12 w-full pt-2 md:pt-0 md:border-none border-t border-black/40",
             isOpen ? "block" : "hidden"
           )}
         >
@@ -119,7 +119,7 @@ export default function Navbar() {
                 </b>
               </div>
               <button
-                className="btn btn-sm btn-warning"
+                className="btn btn-sm btn-warning font-bold"
                 onClick={() => signOut({ redirectTo: "/login" })}
               >
                 Logout
@@ -127,7 +127,7 @@ export default function Navbar() {
             </div>
           ) : (
             <button
-              className="btn btn-warning btn-sm"
+              className="btn btn-warning btn-sm font-bold"
               onClick={() => router.push("/login")}
             >
               Login

@@ -126,12 +126,14 @@ export default function Navbar() {
               </button>
             </div>
           ) : (
-            <button
-              className="btn btn-warning btn-sm font-bold"
-              onClick={() => router.push("/login")}
-            >
-              Login
-            </button>
+            <div className="flex items-center justify-start md:justify-end md:gap-2">
+              <button
+                className="btn btn-warning btn-sm font-bold"
+                onClick={() => router.push("/login")}
+              >
+                Login
+              </button>
+            </div>
           )}
         </div>
         {/* end navbar end  */}

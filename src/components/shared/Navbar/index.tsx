@@ -1,11 +1,16 @@
 "use client";
 import clsx from "clsx";
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { IoClose, IoMenu } from "react-icons/io5";
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { data } = useSession();
+  const router = useRouter();
   return (
     <section className="w-full shadow-sm min-h-15 fixed top-0 z-50 bg-black/20 backdrop-blur-lg">
       <nav className="container mx-auto px-5 h-full py-4 justify-between items-center flex flex-wrap">
@@ -59,19 +64,49 @@ export default function Navbar() {
                 <span className="w-full">Contact</span>
               </li>
             </Link>
-            <Link href={"/"}>
-              <li className="w-full btn btn-ghost btn-sm text-left">
-                <span className="w-full">My Reservation</span>
+            {data && (
+              <>
+                <Link href={"/"}>
+                  <li className="w-full btn btn-ghost btn-sm text-left">
+                    <span className="w-full">My Reservation</span>
+                  </li>
+                </Link>
+                {data?.user.role == "admin" && (
+                  <>
+                    <Link href={"/"}>
+                      <li className="w-full btn btn-ghost btn-sm text-left">
+                        <span className="w-full">Dashboard</span>
+                      </li>
+                    </Link>
+                    <Link href={"/"}>
+                      <li className="w-full btn btn-ghost btn-sm text-left">
+                        <span className="w-full">Manage Rooms</span>
+                      </li>
+                    </Link>
+                  </>
+                )}
+              </>
+            )}
+
+            {data ? (
+              <li>
+                <button
+                  className="btn btn-warning btn-sm"
+                  onClick={() => signOut({ redirectTo: "/login" })}
+                >
+                  Logout
+                </button>
               </li>
-            </Link>
-            <Link href={"/"}>
-              <li className="w-full btn btn-ghost btn-sm text-left">
-                <span className="w-full">Manage Rooms</span>
+            ) : (
+              <li>
+                <button
+                  className="btn btn-warning btn-sm"
+                  onClick={() => router.push("/login")}
+                >
+                  Login
+                </button>
               </li>
-            </Link>
-            <li>
-              <button className="btn btn-warning btn-sm">Login</button>
-            </li>
+            )}
           </ul>
         </div>
       </nav>

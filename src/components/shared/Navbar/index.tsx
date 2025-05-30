@@ -112,7 +112,7 @@ export default function Navbar() {
                   width={50}
                   src={data?.user?.image || "/images/avatar.svg"}
                   alt="image.png"
-                  className="h-10 w-auto aspect-square rounded-full border object-cover object-center bg-white text-black"
+                  className="h-8 w-auto aspect-square rounded-full border object-cover object-center bg-white text-black"
                 />
                 <b className="text-xs line-clamp-2 text-white">
                   {data.user.name || "anonnymouse"}
@@ -126,7 +126,7 @@ export default function Navbar() {
               </button>
             </div>
           ) : (
-            <div className="flex items-center justify-start md:justify-end md:gap-2">
+            <div className="flex md:justify-end md:gap-2">
               <button
                 className="btn btn-warning btn-sm font-bold"
                 onClick={() => router.push("/login")}

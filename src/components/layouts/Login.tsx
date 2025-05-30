@@ -10,16 +10,17 @@ export default function Login() {
       <div className="card w-full md:w-4/12 border border-base-300 bg-base-100 card-xs shadow-md p-3">
         <div className="card-body">
           <div className="flex items-center justify-between mb-3">
-            <Image
-              src="/images/logo.png"
-              alt="logo"
-              height={100}
-              width={100}
-              className="w-4/12"
-            />
-            <h2 className="card-title flex justify-center font-bold text-2xl">
-              SignIn
-            </h2>
+            <div className="w-6/12">
+              <Image
+                src="/images/logo.png"
+                alt="logo"
+                height={100}
+                width={100}
+                priority
+                className="h-auto w-9/12"
+              />
+            </div>
+            <h2 className="w-full text-end font-bold text-2xl">Sign In</h2>
           </div>
           <div className="justify-end card-actions">
             <button

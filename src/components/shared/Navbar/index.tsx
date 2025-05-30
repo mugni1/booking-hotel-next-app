@@ -56,43 +56,43 @@ export default function Navbar() {
         >
           <ul className="flex flex-col md:flex-row md:items-center text-sm gap-1 text-white">
             <Link href={"/"}>
-              <li className="w-full btn btn-active btn-sm text-left font-bold">
+              <li className="w-full btn btn-active btn-sm font-bold">
                 <span className="w-full">Home</span>
               </li>
             </Link>
             <Link href={"/about"}>
-              <li className="w-full btn btn-ghost btn-sm text-left font-bold">
+              <li className="w-full btn btn-ghost btn-sm font-bold">
                 <span className="w-full">About</span>
               </li>
             </Link>
             <Link href={"/"}>
-              <li className="w-full btn btn-ghost btn-sm text-left font-bold">
+              <li className="w-full btn btn-ghost btn-sm font-bold">
                 <span className="w-full">Contact</span>
               </li>
             </Link>
-            {data && (
+            {data ? (
               <>
                 <Link href={"/"}>
-                  <li className="w-full btn btn-ghost btn-sm text-left font-bold">
+                  <li className="w-full btn btn-ghost btn-sm font-bold">
                     <span className="w-full">My Reservation</span>
                   </li>
                 </Link>
-                {data?.user.role == "admin" && (
+                {data?.user.role == "admin" ? (
                   <>
                     <Link href={"/"}>
-                      <li className="w-full btn btn-ghost btn-sm text-left font-bold">
+                      <li className="w-full btn btn-ghost btn-sm font-bold">
                         <span className="w-full">Dashboard</span>
                       </li>
                     </Link>
                     <Link href={"/"}>
-                      <li className="w-full btn btn-ghost btn-sm text-left font-bold">
+                      <li className="w-full btn btn-ghost btn-sm font-bold">
                         <span className="w-full">Manage Rooms</span>
                       </li>
                     </Link>
                   </>
-                )}
+                ) : null}
               </>
-            )}
+            ) : null}
           </ul>
         </div>
         {/* end navbar center  */}

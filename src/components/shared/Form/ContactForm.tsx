@@ -50,6 +50,7 @@ export default function ContactForm() {
           <textarea
             name="message"
             className="textarea w-full "
+            placeholder="Your Message"
             rows={10}
           ></textarea>
           <p className="label text-red-500">{state?.error?.message}</p>

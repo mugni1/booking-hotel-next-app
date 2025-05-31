@@ -38,7 +38,7 @@ export default function Navbar() {
         {/* navbar center  */}
         <div
           className={clsx(
-            "w-full mt-4 mb-2 md:w-fit md:mt-0 md:block navbar-center",
+            "w-full mt-4 mb-2 md:mb-0  md:w-fit md:mt-0 md:block navbar-center",
             isOpen ? "block" : "hidden"
           )}
         >

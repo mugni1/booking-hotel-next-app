@@ -3,11 +3,12 @@ import clsx from "clsx";
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { IoClose, IoMenu } from "react-icons/io5";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const { data } = useSession();
   const router = useRouter();
@@ -56,36 +57,70 @@ export default function Navbar() {
         >
           <ul className="flex flex-col md:flex-row md:items-center text-sm gap-1 text-white">
             <Link href={"/"}>
-              <li className="w-full btn btn-active btn-sm font-bold">
+              <li
+                className={clsx(
+                  "w-full btn btn-sm font-bold",
+                  pathname == "/" ? "btn-active" : "btn-ghost"
+                )}
+              >
                 <span className="w-full">Home</span>
               </li>
             </Link>
             <Link href={"/about"}>
-              <li className="w-full btn btn-ghost btn-sm font-bold">
+              <li
+                className={clsx(
+                  "w-full btn btn-sm font-bold",
+                  pathname == "/about" ? "btn-active" : "btn-ghost"
+                )}
+              >
                 <span className="w-full">About</span>
               </li>
             </Link>
-            <Link href={"/"}>
-              <li className="w-full btn btn-ghost btn-sm font-bold">
+            <Link href={"/contact"}>
+              <li
+                className={clsx(
+                  "w-full btn btn-sm font-bold",
+                  pathname == "/contact" ? "btn-active" : "btn-ghost"
+                )}
+              >
                 <span className="w-full">Contact</span>
               </li>
             </Link>
             {data ? (
               <>
-                <Link href={"/"}>
-                  <li className="w-full btn btn-ghost btn-sm font-bold">
+                <Link href={"/myreservation"}>
+                  <li
+                    className={clsx(
+                      "w-full btn btn-sm font-bold",
+                      pathname == "/myreservation" ? "btn-active" : "btn-ghost"
+                    )}
+                  >
                     <span className="w-full">My Reservation</span>
                   </li>
                 </Link>
                 {data?.user.role == "admin" ? (
                   <>
-                    <Link href={"/"}>
-                      <li className="w-full btn btn-ghost btn-sm font-bold">
+                    <Link href={"/admin/dashboard"}>
+                      <li
+                        className={clsx(
+                          "w-full btn btn-sm font-bold",
+                          pathname == "/admin/dashboard"
+                            ? "btn-active"
+                            : "btn-ghost"
+                        )}
+                      >
                         <span className="w-full">Dashboard</span>
                       </li>
                     </Link>
-                    <Link href={"/"}>
-                      <li className="w-full btn btn-ghost btn-sm font-bold">
+                    <Link href={"/admin/manage-rooms"}>
+                      <li
+                        className={clsx(
+                          "w-full btn btn-sm font-bold",
+                          pathname == "/admin/manage-rooms"
+                            ? "btn-active"
+                            : "btn-ghost"
+                        )}
+                      >
                         <span className="w-full">Manage Rooms</span>
                       </li>
                     </Link>

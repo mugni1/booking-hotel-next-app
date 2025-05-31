@@ -4,6 +4,7 @@ import Navbar from "../components/shared/Navbar";
 import Footer from "../components/shared/Footer";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Raleway({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default async function RootLayout({
             <Navbar />
             <section className="w-full min-h-screen"> {children}</section>
             <Footer />
+            <Toaster containerClassName="font-sans" position="bottom-right" />
           </main>
         </SessionProvider>
       </body>

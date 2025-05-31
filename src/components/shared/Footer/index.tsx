@@ -6,9 +6,9 @@ export default function Footer() {
   return (
     <section className="w-full bg-base-content text-white">
       <footer className="px-5 container mx-auto">
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 py-4 gap-8 mb-5 ">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 mb-5 pt-5 md:pt-10 ">
           <div className="columns-1">
-            <div className=" my-5">
+            <div className="my-5 md:pb-5 md:my-0">
               <Link href={"/"}>
                 <Image
                   src="/images/logo.png"
@@ -82,8 +82,7 @@ export default function Footer() {
             <button className="btn btn-warning font-bold">Subscribe</button>
           </div>
         </div>
-        <hr />
-        <div className="py-8 w-full text-center items-center text-sm">
+        <div className="py-5 w-full text-center items-center text-xs  md:text-sm text-white/80 border-t border-white/80">
           Copyright &copy;2025 | All Right Reserved
         </div>
       </footer>

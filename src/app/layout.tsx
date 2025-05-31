@@ -32,7 +32,10 @@ export default async function RootLayout({
             <Navbar />
             <section className="w-full min-h-screen"> {children}</section>
             <Footer />
-            <Toaster containerClassName="font-sans" position="bottom-right" />
+            <Toaster
+              containerClassName="font-sans text-xs md:text-sm"
+              position="bottom-right"
+            />
           </main>
         </SessionProvider>
       </body>

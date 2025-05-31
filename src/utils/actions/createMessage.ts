@@ -1,5 +1,6 @@
 "use server";
 
+import { prisma } from "@/lib/prisma";
 import { createMessageContactSchema } from "../zod/createMessageContact";
 
 export const createMessage = async (prevState: any, formData: FormData) => {
@@ -9,13 +10,29 @@ export const createMessage = async (prevState: any, formData: FormData) => {
   if (!dataValidated.success) {
     return {
       success: false,
-      msg: "Please complete all form",
+      msg: "Please complete all form!",
       error: dataValidated.error.flatten().fieldErrors,
     };
   }
 
-  return {
-    success: true,
-    msg: "Your message sended",
-  };
+  const { name, email, subject, message } = dataValidated.data;
+  try {
+    const res = await prisma.contact.create({
+      data: {
+        name,
+        email,
+        subject,
+        message,
+      },
+    });
+    return {
+      success: true,
+      msg: "Message sended, thanks for contac us",
+    };
+  } catch {
+    return {
+      success: false,
+      msg: "Failed send message, try again later!",
+    };
+  }
 };

@@ -25,7 +25,9 @@ export default function ContactForm() {
               className="input"
               placeholder="John Doe"
             />
-            <p className="label text-red-500">{state?.error?.name}</p>
+            <p className="label text-xs md:text-sm text-red-500">
+              {state?.error?.name}
+            </p>
           </fieldset>
           <fieldset className="fieldset">
             <input
@@ -34,7 +36,9 @@ export default function ContactForm() {
               className="input"
               placeholder="johndoe@gmail.com"
             />
-            <p className="label text-red-500">{state?.error?.email}</p>
+            <p className="label text-xs md:text-sm text-red-500">
+              {state?.error?.email}
+            </p>
           </fieldset>
         </div>
         <fieldset className="fieldset">
@@ -44,7 +48,9 @@ export default function ContactForm() {
             className="input w-full"
             placeholder="subject@gmail.com"
           />
-          <p className="label text-red-500">{state?.error?.subject}</p>
+          <p className="label text-xs md:text-sm text-red-500">
+            {state?.error?.subject}
+          </p>
         </fieldset>
         <fieldset className="fieldset">
           <textarea
@@ -53,7 +59,9 @@ export default function ContactForm() {
             placeholder="Your Message"
             rows={10}
           ></textarea>
-          <p className="label text-red-500">{state?.error?.message}</p>
+          <p className="label text-xs md:text-sm text-red-500">
+            {state?.error?.message}
+          </p>
         </fieldset>
         <fieldset className="fieldset">
           <FormStatus title="Send Message" />

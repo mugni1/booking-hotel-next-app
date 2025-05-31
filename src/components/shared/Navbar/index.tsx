@@ -38,7 +38,7 @@ export default function Navbar() {
         {/* navbar center  */}
         <div
           className={clsx(
-            "w-full mt-4 md:w-fit md:mt-0 md:block navbar-center",
+            "w-full mt-4 mb-2 md:w-fit md:mt-0 md:block navbar-center",
             isOpen ? "block" : "hidden"
           )}
         >
@@ -49,7 +49,7 @@ export default function Navbar() {
         {/* navbar end  */}
         <div
           className={clsx(
-            "navbar-end md:block md:w-2/12 w-full pt-2 md:pt-0 md:border-none border-t border-black/40",
+            "navbar-end md:block md:w-2/12 w-full pt-3 md:pt-0 md:border-none border-t border-white/60",
             isOpen ? "block" : "hidden"
           )}
         >

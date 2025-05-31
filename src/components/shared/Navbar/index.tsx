@@ -1,32 +1,19 @@
 "use client";
 import clsx from "clsx";
-import { signOut, useSession } from "next-auth/react";
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { IoClose, IoMenu } from "react-icons/io5";
+import NavStart from "./NavStart";
+import NavCenter from "./NavCenter";
+import NavEnd from "./NavEnd";
 
 export default function Navbar() {
-  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const { data } = useSession();
-  const router = useRouter();
+
   return (
     <section className="w-full shadow-sm min-h-15 fixed top-0 z-50 bg-black/20 backdrop-blur-lg">
-      {/* navbar start  */}
       <nav className="container mx-auto px-5 h-full py-4 justify-between items-center flex flex-wrap">
-        <div className=" text-warning navbar-start w-auto md:w-2/12">
-          <Link href={"/"}>
-            <Image
-              src="/images/logo.png"
-              alt="logo"
-              height={50}
-              width={100}
-              className="h-7 w-auto"
-            />
-          </Link>
-        </div>
+        {/* navbar start  */}
+        <NavStart />
         {/* end navbar start  */}
         {/* burger menu  */}
         <div className="navbar-end md:hidden">
@@ -55,80 +42,7 @@ export default function Navbar() {
             isOpen ? "block" : "hidden"
           )}
         >
-          <ul className="flex flex-col md:flex-row md:items-center text-sm gap-1 text-white">
-            <Link href={"/"}>
-              <li
-                className={clsx(
-                  "w-full btn btn-sm font-bold",
-                  pathname == "/" ? "btn-active" : "btn-ghost"
-                )}
-              >
-                <span className="w-full">Home</span>
-              </li>
-            </Link>
-            <Link href={"/about"}>
-              <li
-                className={clsx(
-                  "w-full btn btn-sm font-bold",
-                  pathname == "/about" ? "btn-active" : "btn-ghost"
-                )}
-              >
-                <span className="w-full">About</span>
-              </li>
-            </Link>
-            <Link href={"/contact"}>
-              <li
-                className={clsx(
-                  "w-full btn btn-sm font-bold",
-                  pathname == "/contact" ? "btn-active" : "btn-ghost"
-                )}
-              >
-                <span className="w-full">Contact</span>
-              </li>
-            </Link>
-            {data ? (
-              <>
-                <Link href={"/myreservation"}>
-                  <li
-                    className={clsx(
-                      "w-full btn btn-sm font-bold",
-                      pathname == "/myreservation" ? "btn-active" : "btn-ghost"
-                    )}
-                  >
-                    <span className="w-full">My Reservation</span>
-                  </li>
-                </Link>
-                {data?.user.role == "admin" ? (
-                  <>
-                    <Link href={"/admin/dashboard"}>
-                      <li
-                        className={clsx(
-                          "w-full btn btn-sm font-bold",
-                          pathname == "/admin/dashboard"
-                            ? "btn-active"
-                            : "btn-ghost"
-                        )}
-                      >
-                        <span className="w-full">Dashboard</span>
-                      </li>
-                    </Link>
-                    <Link href={"/admin/manage-rooms"}>
-                      <li
-                        className={clsx(
-                          "w-full btn btn-sm font-bold",
-                          pathname == "/admin/manage-rooms"
-                            ? "btn-active"
-                            : "btn-ghost"
-                        )}
-                      >
-                        <span className="w-full">Manage Rooms</span>
-                      </li>
-                    </Link>
-                  </>
-                ) : null}
-              </>
-            ) : null}
-          </ul>
+          <NavCenter />
         </div>
         {/* end navbar center  */}
 
@@ -139,37 +53,7 @@ export default function Navbar() {
             isOpen ? "block" : "hidden"
           )}
         >
-          {data ? (
-            <div className="flex items-center justify-between md:justify-end md:gap-2">
-              <div className="flex items-center gap-2">
-                <Image
-                  height={50}
-                  width={50}
-                  src={data?.user?.image || "/images/avatar.svg"}
-                  alt="image.png"
-                  className="h-8 w-auto aspect-square rounded-full border object-cover object-center bg-white text-black"
-                />
-                <b className="text-xs line-clamp-2 text-white">
-                  {data.user.name || "anonnymouse"}
-                </b>
-              </div>
-              <button
-                className="btn btn-sm btn-warning font-bold"
-                onClick={() => signOut({ redirectTo: "/login" })}
-              >
-                Logout
-              </button>
-            </div>
-          ) : (
-            <div className="flex md:justify-end md:gap-2">
-              <button
-                className="btn btn-warning btn-sm font-bold"
-                onClick={() => router.push("/login")}
-              >
-                Login
-              </button>
-            </div>
-          )}
+          <NavEnd />
         </div>
         {/* end navbar end  */}
       </nav>

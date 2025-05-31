@@ -1,5 +1,6 @@
+import CreateRoom from "@/components/layouts/Room/CreateRoom";
 import React from "react";
 
 export default function Page() {
-  return <div className="pt-20">page create rooms</div>;
+  return <CreateRoom />;
 }

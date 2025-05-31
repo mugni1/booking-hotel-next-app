@@ -3,7 +3,7 @@ import CardProduct from "../shared/CardProduct";
 
 export default function RoomAndRates() {
   return (
-    <section className="min-h-screen container mx-auto px-5 space-y-5 w-full pt-10">
+    <section className="min-h-screen container mx-auto px-5 space-y-5 w-full py-8">
       <div>
         <h1 className="w-full text-center font-extrabold text-2xl md:text-3xl ">
           ROOM & RATES

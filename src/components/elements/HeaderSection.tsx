@@ -20,8 +20,8 @@ export default function HeaderSection({
         />
       </div>
       <div className="absolute inset-0 bg-black/50 backdrop-blur-xs"></div>
-      <div className="relative container h-full mx-auto px-5 pt-10 flex flex-col items-center justify-center">
-        <h1 className="text-white font-extrabold text-3xl md:text-5xl text-center">
+      <div className="relative container h-full mx-auto px-5 pt-12 md:pt-10 flex flex-col items-center justify-center">
+        <h1 className="text-white font-extrabold text-2xl md:text-4xl text-center">
           {title}
         </h1>
         <p className="text-center text-white/80 font-semibold text-xs md:text-base">

@@ -28,10 +28,10 @@ export default async function RoomTable() {
                 <div className="w-full aspect-video">
                   <Image
                     src={room.image}
-                    alt="image"
+                    alt={room.image}
                     width={200}
                     height={200}
-                    className="w-full h-full aspect-video object-cover object-center rounded-md skeleton"
+                    className="w-30 md:w-full h-full aspect-video object-cover object-center rounded-md skeleton"
                   />
                 </div>
               </td>

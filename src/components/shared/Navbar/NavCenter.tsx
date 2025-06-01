@@ -64,13 +64,11 @@ export default function NavCenter() {
                   <span className="w-full">Dashboard</span>
                 </li>
               </Link>
-              <Link href={"/admin/manage-rooms"}>
+              <Link href={"/admin/room"}>
                 <li
                   className={clsx(
                     "w-full btn btn-sm font-bold",
-                    pathname == "/admin/manage-rooms"
-                      ? "btn-active"
-                      : "btn-ghost"
+                    pathname == "/admin/room" ? "btn-active" : "btn-ghost"
                   )}
                 >
                   <span className="w-full">Manage Rooms</span>

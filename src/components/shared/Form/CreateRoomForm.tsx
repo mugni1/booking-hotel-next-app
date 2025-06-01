@@ -32,7 +32,7 @@ export default function CreateRoomForm({
   return (
     <form action={formAction}>
       <section className="grid grid-cols-12 gap-5">
-        <div className="shadow-md rounded-md border border-slate-300  col-span-8 p-5">
+        <div className="shadow-md rounded-md border border-slate-300  col-span-12 md:col-span-8 p-5">
           <fieldset className="fieldset">
             <input
               type="text"
@@ -51,7 +51,7 @@ export default function CreateRoomForm({
             ></textarea>
             <p className="label text-red-500">{state?.error?.description}</p>
           </fieldset>
-          <div className="fieldset grid grid-cols-5 gap-5">
+          <div className="fieldset grid grid-cols-2 md:grid-cols-5 gap-5">
             {amenities?.map((ameniti, index) => (
               <label key={index} className="label">
                 <input
@@ -60,12 +60,14 @@ export default function CreateRoomForm({
                   name="amenities"
                   className="checkbox checkbox-sm checkbox-warning"
                 />
-                {ameniti.name}
+                <span className="w-full overflow-hidden flex flex-nowrap text-ellipsis">
+                  {ameniti.name}
+                </span>
               </label>
             ))}
           </div>
         </div>
-        <div className="shadow-md rounded-md border border-slate-300  col-span-4 p-5">
+        <div className="shadow-md rounded-md border border-slate-300 col-span-12  md:col-span-4 p-5">
           <FieldImageUploader />
           <fieldset className="fieldset">
             <input

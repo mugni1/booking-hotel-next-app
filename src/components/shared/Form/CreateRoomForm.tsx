@@ -51,7 +51,7 @@ export default function CreateRoomForm({
             ></textarea>
             <p className="label text-red-500">{state?.error?.description}</p>
           </fieldset>
-          <div className="fieldset grid grid-cols-2 md:grid-cols-5 gap-5">
+          <div className="fieldset grid grid-cols-2 md:grid-cols-5">
             {amenities?.map((ameniti, index) => (
               <label key={index} className="label">
                 <input
@@ -65,6 +65,7 @@ export default function CreateRoomForm({
                 </span>
               </label>
             ))}
+            <p className="label text-red-500">{state?.error?.amenities}</p>
           </div>
         </div>
         <div className="shadow-md rounded-md border border-slate-300 col-span-12  md:col-span-4 p-5">

@@ -1,5 +1,6 @@
+import RoomPage from "@/components/layouts/Room";
 import React from "react";
 
 export default function Page() {
-  return <div className="pt-20">Page Rooms</div>;
+  return <RoomPage />;
 }

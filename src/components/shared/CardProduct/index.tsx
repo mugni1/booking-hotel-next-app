@@ -4,7 +4,7 @@ import { FaUsers } from "react-icons/fa";
 
 export default function CardProduct() {
   return (
-    <div className="card bg-base-100 column-1 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300 cursor-pointer group">
+    <div className=" rounded-md overflow-hidden bg-base-100 border border-gray-200 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300 cursor-pointer">
       <figure className="h-30 md:h-50">
         <Image
           src="/images/about-image.jpg"

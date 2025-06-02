@@ -14,7 +14,7 @@ export default function NavCenter() {
         <li
           className={clsx(
             "w-full btn btn-sm font-bold",
-            pathname == "/" ? "btn-active" : "btn-ghost"
+            pathname == "/" ? "btn-active btn-warning text-white" : "btn-ghost"
           )}
         >
           <span className="w-full">Home</span>
@@ -24,7 +24,9 @@ export default function NavCenter() {
         <li
           className={clsx(
             "w-full btn btn-sm font-bold",
-            pathname == "/about" ? "btn-active" : "btn-ghost"
+            pathname == "/about"
+              ? "btn-active btn-warning text-white"
+              : "btn-ghost"
           )}
         >
           <span className="w-full">About</span>
@@ -34,7 +36,9 @@ export default function NavCenter() {
         <li
           className={clsx(
             "w-full btn btn-sm font-bold",
-            pathname == "/contact" ? "btn-active" : "btn-ghost"
+            pathname == "/contact"
+              ? "btn-active btn-warning text-white"
+              : "btn-ghost"
           )}
         >
           <span className="w-full">Contact</span>
@@ -46,7 +50,9 @@ export default function NavCenter() {
             <li
               className={clsx(
                 "w-full btn btn-sm font-bold",
-                pathname == "/myreservation" ? "btn-active" : "btn-ghost"
+                pathname == "/myreservation"
+                  ? "btn-active btn-warning text-white"
+                  : "btn-ghost"
               )}
             >
               <span className="w-full">My Reservation</span>
@@ -58,7 +64,9 @@ export default function NavCenter() {
                 <li
                   className={clsx(
                     "w-full btn btn-sm font-bold",
-                    pathname == "/admin/dashboard" ? "btn-active" : "btn-ghost"
+                    pathname == "/admin/dashboard"
+                      ? "btn-active btn-warning text-white"
+                      : "btn-ghost"
                   )}
                 >
                   <span className="w-full">Dashboard</span>
@@ -68,7 +76,9 @@ export default function NavCenter() {
                 <li
                   className={clsx(
                     "w-full btn btn-sm font-bold",
-                    pathname == "/admin/room" ? "btn-active" : "btn-ghost"
+                    pathname == "/admin/room"
+                      ? "btn-active btn-warning text-white"
+                      : "btn-ghost"
                   )}
                 >
                   <span className="w-full">Manage Rooms</span>

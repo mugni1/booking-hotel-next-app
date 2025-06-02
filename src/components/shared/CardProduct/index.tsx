@@ -22,11 +22,13 @@ export default function CardProduct() {
             <span className="text-xs md:text-base">night</span>
           </p>
         </div>
-        <div className="card-actions justify-between items-center">
+        <div className="card-actions grid grid-cols-1 md:grid-cols-2 md:items-center">
           <span className=" flex gap-1 items-center text-xs md:text-sm font-semibold">
             <FaUsers className="size-3 md:size-5" /> 2 People
           </span>
-          <button className="btn btn-xs md:btn-md btn-warning">Book</button>
+          <button className="btn btn-xs md:btn-md btn-warning w-full text-white">
+            Book Now
+          </button>
         </div>
       </div>
     </div>

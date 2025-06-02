@@ -8,9 +8,22 @@ import { useImageUploadStore } from "@/store/imageUploadStore";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
-export default function CreateRoomForm({
+interface Room {
+  name: string;
+  id: string;
+  createdAt: Date;
+  updatedAt: Date;
+  description: string;
+  capacity: number;
+  price: number;
+  image: string;
+  roomAmenities: { amenitiesId: string }[];
+}
+export default function UpdateRoomForm({
+  room,
   amenities,
 }: {
+  room: Room;
   amenities: Amenities[];
 }) {
   const router = useRouter();
@@ -30,6 +43,10 @@ export default function CreateRoomForm({
       router.push("/admin/room");
     }
   }, [state]);
+
+  useEffect(() => {
+    setImageURL(room.image);
+  }, []);
   return (
     <form action={formAction}>
       <section className="grid grid-cols-12 gap-5">
@@ -38,6 +55,7 @@ export default function CreateRoomForm({
             <input
               type="text"
               name="name"
+              defaultValue={room.name}
               className="input input-warning w-full"
               placeholder="Room Name"
             />
@@ -46,6 +64,7 @@ export default function CreateRoomForm({
           <fieldset className="fieldset">
             <textarea
               name="description"
+              defaultValue={room.description}
               className="textarea textarea-warning w-full"
               placeholder="Description"
               rows={10}
@@ -57,6 +76,9 @@ export default function CreateRoomForm({
               <label key={index} className="label">
                 <input
                   defaultValue={ameniti.id}
+                  defaultChecked={room.roomAmenities.some(
+                    (value) => value.amenitiesId == ameniti.id
+                  )}
                   type="checkbox"
                   name="amenities"
                   className="checkbox checkbox-sm checkbox-warning"
@@ -75,6 +97,7 @@ export default function CreateRoomForm({
             <input
               type="number"
               name="capacity"
+              defaultValue={room.capacity}
               className="w-full input input-warning capitalize"
               placeholder="capacity"
             />
@@ -84,6 +107,7 @@ export default function CreateRoomForm({
             <input
               type="number"
               name="price"
+              defaultValue={room.price}
               className="w-full input input-warning capitalize"
               placeholder="price"
             />

@@ -6,7 +6,6 @@ import React from "react";
 export default async function EditRoom({ id }: { id: string }) {
   const { data: amenities } = await getAmeneities();
   const { data: room } = await getRoomById(id);
-  console.log(room);
   return (
     <section className="pt-20 pb-8 px-5 container mx-auto">
       <h1 className="md:ext-4xl text-2xl font-bold mb-2 capitalize">

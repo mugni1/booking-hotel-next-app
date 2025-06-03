@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { FaUsers } from "react-icons/fa";
 import { IoCheckmark } from "react-icons/io5";
+import CreateReserveForm from "../shared/Form/CreateReserveForm";
 
 export default async function RoomDetail({ id }: { id: string }) {
   const { data } = await getRoomById(id);
@@ -35,8 +36,8 @@ export default async function RoomDetail({ id }: { id: string }) {
           </div>
         </div>
       </div>
-      <div className="md:col-span-2 col-span-6">
-        <div className="w-full  rounded-md border-3 border-dashed bg-slate-100 border-gray-300 text-gray-500 p-5 flex justify-between items-center">
+      <div className="md:col-span-2 h-fit col-span-6 rounded-md border-3 border-dashed bg-slate-100 border-gray-300 text-gray-500 p-5 space-y-5">
+        <div className="w-full flex justify-between items-center">
           <span className="flex gap-2  font-semibold items-center">
             <FaUsers size={20} />
             {data.capacity} people
@@ -50,6 +51,7 @@ export default async function RoomDetail({ id }: { id: string }) {
             </h3>
           </span>
         </div>
+        <CreateReserveForm />
       </div>
     </section>
   );

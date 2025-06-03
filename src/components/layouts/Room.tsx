@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import HeaderSection from "../elements/HeaderSection";
 import RoomList from "../shared/RoomList";
+import LoadingRoom from "../shared/RoomList/LoadingRoom";
 
 export default function Room() {
   return (
@@ -9,7 +10,7 @@ export default function Room() {
         title="Rooms"
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium similique rerum a aliquam error placeat! "
       />
-      <Suspense fallback={<span>Loading...</span>}>
+      <Suspense fallback={<LoadingRoom />}>
         <RoomList />
       </Suspense>
     </>

@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/prisma";
 
 export const getRooms = async () => {
-  //   await new Promise((resolve) => setTimeout(resolve, 5000)); // Delay 2 detik
+  await new Promise((resolve) => setTimeout(resolve, 5000)); // Delay 2 detik
   try {
     const res = await prisma.room.findMany({
       orderBy: {

@@ -21,12 +21,14 @@ export default function CardProduct({
           alt="products"
           height={400}
           width={400}
-          className="w-full h-full object-cover object-center justify-center duration-300 transition-all"
+          className="w-full h-full object-cover object-center justify-center duration-300 transition-all skeleton rounded-none"
         />
       </figure>
       <div className="p-2 pb-3 md:p-4 md:pb-6">
         <div>
-          <h2 className="font-bold text-base md:text-xl">{name}</h2>
+          <h2 className="font-bold text-base md:text-xl line-clamp-1">
+            {name}
+          </h2>
           <p className="font-semibold mb-5 flex items-center text-ellipsis overflow-hidden">
             <span className="text-sm md:text-xl">
               Rp {price.toLocaleString("id-ID")}/

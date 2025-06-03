@@ -3,10 +3,10 @@ import React, { useActionState, useEffect } from "react";
 import FormStatus from "./FormStatus";
 import FieldImageUploader from "./FieldImageUploader";
 import { Amenities } from "@prisma/client";
-import { createRoom } from "@/utils/actions/createRoom";
 import { useImageUploadStore } from "@/store/imageUploadStore";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { updateRoom } from "@/utils/actions/updateRoom";
 
 interface Room {
   name: string;
@@ -29,7 +29,7 @@ export default function UpdateRoomForm({
   const router = useRouter();
   const { imageURL, setImageURL } = useImageUploadStore();
   const [state, formAction] = useActionState(
-    createRoom.bind(null, imageURL),
+    updateRoom.bind(null, room.id, imageURL),
     null
   );
 

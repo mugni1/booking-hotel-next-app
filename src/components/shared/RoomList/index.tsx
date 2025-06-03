@@ -9,6 +9,7 @@ export default async function RoomList() {
       {rooms.map((room) => (
         <CardProduct
           key={room.id}
+          id={room.id}
           name={room.name}
           capacity={room.capacity}
           image={room.image}

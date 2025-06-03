@@ -15,7 +15,7 @@ export default function CardProduct({
 }) {
   return (
     <div className=" rounded-md overflow-hidden bg-base-100 border border-gray-200 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300 cursor-pointer">
-      <figure className="h-30 md:h-50">
+      <figure className="h-30 md:h-50 bg-slate-200">
         <Image
           src={image}
           alt="products"

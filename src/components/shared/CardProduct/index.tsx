@@ -26,14 +26,14 @@ export default function CardProduct({
       </figure>
       <div className="p-2 pb-3 md:p-4 md:pb-6">
         <div>
-          <h2 className="font-bold text-base md:text-xl line-clamp-1">
+          <h2 className="font-bold text-base md:text-lg line-clamp-1">
             {name}
           </h2>
           <p className="font-semibold mb-5 flex items-center text-ellipsis overflow-hidden">
-            <span className="text-sm md:text-xl">
+            <span className="text-sm md:text-lg">
               Rp {price.toLocaleString("id-ID")}/
             </span>
-            <span className="text-xs md:text-base">night</span>
+            <span className="text-xs md:text-sm">night</span>
           </p>
         </div>
         <div className="card-actions grid grid-cols-1 md:grid-cols-2 md:items-center">

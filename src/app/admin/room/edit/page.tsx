@@ -1,4 +1,4 @@
-import EditRoom from "@/components/layouts/Room/UpdateRoom";
+import EditRoom from "@/components/layouts/AdminRoom/UpdateRoom";
 import React from "react";
 
 export default async function Page({

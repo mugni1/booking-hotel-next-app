@@ -1,4 +1,4 @@
-import CreateRoom from "@/components/layouts/Room/CreateRoom";
+import CreateRoom from "@/components/layouts/AdminRoom/CreateRoom";
 import React from "react";
 
 export default function Page() {

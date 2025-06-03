@@ -12,6 +12,7 @@ export const getRooms = async () => {
         image: true,
         name: true,
         price: true,
+        capacity: true,
         createdAt: true,
       },
     });

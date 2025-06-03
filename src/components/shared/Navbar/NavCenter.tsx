@@ -32,6 +32,18 @@ export default function NavCenter() {
           <span className="w-full">About</span>
         </li>
       </Link>
+      <Link href={"/room"}>
+        <li
+          className={clsx(
+            "w-full btn btn-sm font-bold",
+            pathname == "/room"
+              ? "btn-active btn-warning text-white"
+              : "btn-ghost"
+          )}
+        >
+          <span className="w-full">Rooms</span>
+        </li>
+      </Link>
       <Link href={"/contact"}>
         <li
           className={clsx(
@@ -76,7 +88,7 @@ export default function NavCenter() {
                 <li
                   className={clsx(
                     "w-full btn btn-sm font-bold",
-                    pathname == "/admin/room"
+                    pathname.startsWith("/admin/room")
                       ? "btn-active btn-warning text-white"
                       : "btn-ghost"
                   )}

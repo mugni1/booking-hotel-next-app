@@ -40,7 +40,7 @@ export default function CardProduct({
           <span className=" flex gap-1 items-center text-xs md:text-sm font-semibold">
             <FaUsers className="size-3 md:size-5" /> {capacity} People
           </span>
-          <button className="btn btn-xs md:btn-md btn-warning w-full text-white">
+          <button className="btn btn-sm md:btn-md btn-warning w-full text-white">
             Book Now
           </button>
         </div>

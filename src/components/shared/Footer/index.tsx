@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { FaHotel } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -9,14 +10,12 @@ export default function Footer() {
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 mb-5 pt-5 md:pt-10 ">
           <div className="columns-1">
             <div className="my-5 md:pb-5 md:my-0">
-              <Link href={"/"}>
-                <Image
-                  src="/images/logo.png"
-                  alt="logo"
-                  height={50}
-                  width={100}
-                  className="w-4/12"
-                />
+              <Link
+                href={"/"}
+                className="flex items-center gap-4 font-extrabold text-2xl"
+              >
+                <FaHotel size={38} />
+                Lorem Hotel
               </Link>
             </div>
             <p className="text-xs md:text-sm text-white/70">

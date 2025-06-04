@@ -24,7 +24,7 @@ export const getRooms = async () => {
   } catch {
     return {
       success: false,
-      message: "Internal server error",
+      message: "please check your internet connection",
       data: [],
     };
   }

@@ -51,7 +51,7 @@ export default async function RoomDetail({ id }: { id: string }) {
             </h3>
           </span>
         </div>
-        <CreateReserveForm />
+        <CreateReserveForm roomId={data.id} price={data.price} />
       </div>
     </section>
   );

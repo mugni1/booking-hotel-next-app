@@ -7,7 +7,14 @@ import "react-datepicker/dist/react-datepicker.css";
 import FormStatus from "./FormStatus";
 import { createReservation } from "@/utils/actions/createReservation";
 import toast from "react-hot-toast";
-export default function CreateReserveForm() {
+import { redirect } from "next/navigation";
+export default function CreateReserveForm({
+  roomId,
+  price,
+}: {
+  roomId: string;
+  price: number;
+}) {
   const currentDate = new Date();
   const defaultEndDate = addDays(currentDate, 3);
 
@@ -20,11 +27,19 @@ export default function CreateReserveForm() {
     setEndDate(end);
   };
 
-  const [state, formAction] = useActionState(createReservation, null);
+  const createReserveWithData = createReservation.bind(
+    null,
+    roomId,
+    price,
+    starDate,
+    endDate
+  );
+  const [state, formAction] = useActionState(createReserveWithData, null);
 
   useEffect(() => {
     if (state?.success == true) {
       toast.success(state.message);
+      redirect(`/checkout?reservationId=${state.reserveId}`);
     }
     if (state?.success == false) {
       toast.error(state.message);
